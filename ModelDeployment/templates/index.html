@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Predictoin System</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+<script src="../static/JS/index.js"></script>
+</head>
+<body style="overflow-x:hidden">
+  <div class="maindiv">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand logo" href="#">Loan Approval</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="#card">Form <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#result">Result Section</a>
+        <a class="nav-item nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner carousel_img">
+      <div class="carousel-item active">
+        <img class="d-block w-100 " src="../static/Images/img2.png" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../static/Images/img4.webp" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../static/Images/img1.webp" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<div class="row" id="card">
+  <!-- Left Card for Project Introduction -->
+  <div class="leftcard card col-lg-6">
+    <h1 class="m-5 font-weight-bold">Loan Approval Prediction System</h1>
+    <ul style="font-size: 20px">
+      <li>
+        Loan approval is a very important process for banking
+        organizations. The system approved or reject the loan
+        applications.
+      </li>
+      <li>
+        Recovery of loans is a major contributing parameter in the
+        financial statements of a bank.
+      </li>
+      <li>
+        It is very difficult to predict the possibility of payment of loan
+              by the customer.
+      </li>
+      <li>
+        The moto of making this project is to predict either your applicatin is approved or not for loan.
+      </li>
+    </ul>
+  </div>
+    <!-- Right Card for Project Innput -->
+  <div class="rightcard card col-lg-6">
+    <div>
+      <h2 class="m-5 font-weight-bold text-dark">
+        Loan Approval Prediction
+      </h2>
+      <div id="inputs-form">
+        <form action="/" method="POST">
+          <!-- Gender -->
+          <div class="form-group row">
+            <label
+              class="col-lg-4 col-4 offset-lg-1 col-form-label"
+              style="font-weight: bolder; font-size: large; color: black"
+              >Gender</label
+            >
+            <div class="col-lg-6 col-xl-5 col-6">
+              <div class="dropdown">
+                <select
+                  class="form-control btn-primary"
+                  name="Gender"
+                  id="gender"
+                  style="
+                    background-color: rgb(0, 0, 0, 0.5);
+                    color: white;
+                    height: 40px;
+                    border-width: 3px;
+                    border-color: red;
+                  "
+                  onchange="checkSelection(this)"
+                  required
+                >
+                  <option selected disabled value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Marry -->
+          <div class="form-group row">
+            <label
+              class="col-lg-4 col-4 offset-lg-1 col-form-label"
+              style="font-weight: bolder; font-size: large; color: black"
+              >Married</label
+            >
+            <div class="col-lg-6 col-xl-5 col-6">
+              <div class="dropdown">
+                <select
+                  class="form-control btn-primary"
+                  name="Married"
+                  id="married"
+                  style="
+                    background-color: rgb(0, 0, 0, 0.5);
+                    color: white;
+                    height: 40px;
+                    border-width: 3px;
+                    border-color: red;
+                  "
+                  onchange="checkSelection(this)"
+                  required
+                >
+                  <option selected disabled value="">Select Married</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Education -->
+          <div class="form-group row">
+            <label
+              class="col-lg-4 col-4 offset-lg-1 col-form-label"
+              style="font-weight: bolder; font-size: large; color: black"
+              >Education</label
+            >
+            <div class="col-lg-6 col-xl-5 col-6">
+              <div class="dropdown">
+                <select
+                  class="form-control btn-primary"
+                  name="Education"
+                  id="education"
+                  style="
+                    background-color: rgb(0, 0, 0, 0.5);
+                    color: white;
+                    height: 40px;
+                    border-width: 3px;
+                    border-color: red;
+                  "
+                  onchange="checkSelection(this)"
+                  required
+                >
+                  <option selected disabled value="">
+                    Select Education
+                  </option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="Not-Graduate">Not-Graduate</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Self Employee -->
+          <div class="form-group row">
+            <label
+              class="col-lg-4 col-4 offset-lg-1 col-form-label"
+              style="font-weight: bolder; font-size: large; color: black"
+              >Employee</label
+            >
+            <div class="col-lg-6 col-xl-5 col-6">
+              <div class="dropdown">
+                <select
+                  class="form-control btn-primary"
+                  name="Employee"
+                  id="employee"
+                  style="
+                    background-color: rgb(0, 0, 0, 0.5);
+                    color: white;
+                    height: 40px;
+                    border-width: 3px;
+                    border-color: red;
+                  "
+                  onchange="checkSelection(this)"
+                  required
+                >
+                  <option selected disabled value="">
+                    Select Employees
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+         
+          <!--Property Area-->
+          <div class="form-group row">
+            <label
+              class="col-lg-4 col-4 offset-lg-1 col-form-label"
+              style="font-weight: bolder; font-size: large; color: black"
+              >Property Area</label
+            >
+            <div class="col-lg-6 col-xl-5 col-6">
+              <div class="dropdown">
+                <select
+                  class="form-control btn-primary"
+                  name="Area"
+                  id="propertyarea"
+                  style="
+                    background-color: rgb(0, 0, 0, 0.5);
+                    color: white;
+                    height: 40px;
+                    border-width: 3px;
+                    border-color: red;
+                  "
+                  onchange="checkSelection(this)"
+                  required
+                >
+                  <option selected disabled value="">
+                    Select Property
+                  </option>
+                  <option value="Urban">Urban</option>
+                  <option value="Rural">Rural</option>
+                  <option value="Semi-Urban">Semi-Urban</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Predict Button -->
+          <div class="form-group row mt-5">
+            <div class="col-lg-5 offset-lg-3 col-9 offset-1 mb-5">
+              <button
+                type="submit"
+                class="btn btn-success"
+                id="calculateButtons"
+                style="width: 100%"
+              >
+                Predict
+              </button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+<footer style="background-color: #CAD3C8;">
+  <div class="row" style="text-align: center;padding:20px">
+    <div class="col" id="result"><h1>:Result Show here:</h1><br><h2 id="result" style="color: black;">{{predicted_result}}</h2></div>
+  </div><hr>
+<div class="contact" id="contact" style="text-align: center; padding:15px">
+<li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+<li><a href="https://ads.twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a></li>
+</div>
+<hr>
+<div class="copyrights" style="text-align: center;"><span>Copyrights © 2020 Muhammad Zubair | All Rights Reserved </span></div>
+</footer>
+</div>
+</body>
+</html>
